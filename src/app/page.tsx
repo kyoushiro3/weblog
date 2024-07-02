@@ -1,9 +1,9 @@
-import TopicsList from "./components/TopicsList";
+import AllBlogs from "./components/AllBlogs";
 
 export default function Home() {
   return(
-    <>
-      <TopicsList/>
-    </>
+    <main className="w-full h-[90vh] flex flex-col justify-between">
+      <AllBlogs/>
+    </main>
   )
 }
