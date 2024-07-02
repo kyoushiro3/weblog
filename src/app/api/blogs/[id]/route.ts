@@ -2,9 +2,9 @@ import { NextResponse } from "next/server";
 import connectMongoDB from "../../../../../libs/mongodb";
 import Blog from "../../../../../models/blog";
 
-export async function PUT(request: any, params: {id:string}){
+export async function PUT(request: any,  { params }: { params: { id: string } }){
     const {id} = params;
-    const {newTitle: title, newDescription: description} =request.json()
+    const {title, description} = await request.json()
     await connectMongoDB()
     await Blog.findByIdAndUpdate(id, {title, description})
     return NextResponse.json({message: "Blog updated"}, {status:200})

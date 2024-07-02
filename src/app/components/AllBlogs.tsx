@@ -25,7 +25,7 @@ export default async function AllBlogs() {
   return (
     <main className="w-full flex py-4 p-6 items-center h-[90vh] flex-col gap-5">
       {blogs.map((blog: any) => (
-      <div key={blog.id}className="w-full lg:w-1/2 space-y-2 rounded-lg p-4 relative group hover:shadow-xl transition-all duration-300 hover:bg-gray-300/10 dark:hover:border-white/5">
+      <div key={blog._id} className="w-full lg:w-1/2 space-y-2 rounded-lg p-4 relative group hover:shadow-xl transition-all duration-300 hover:bg-gray-300/10 dark:hover:border-white/5">
         <div className="flex items-center justify-between">
           <div>
             <h2 className="text-xl font-semibold line-clamp-1"> {blog.title}</h2>
