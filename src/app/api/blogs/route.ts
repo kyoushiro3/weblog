@@ -1,15 +1,15 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import connectMongoDB from "../../../../libs/mongodb";
 import Blog from "../../../../models/blog";
 
-export async function POST(request: any){
+export async function POST(request: NextRequest){
     const {title, description} = await request.json();
     await connectMongoDB();
     const newBlog = await Blog.create({title, description});
     return NextResponse.json({message: "Blog created successfully", blog:newBlog}, {status: 201})
 }
 
-export async function GET(request:Request) {
+export async function GET() {
     try {
         await connectMongoDB();
         const blogs = await Blog.find();
