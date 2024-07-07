@@ -20,7 +20,7 @@ export async function GET() {
     }
 }
 
-export async function DELETE(request:any){
+export async function DELETE(request:NextRequest){
     const id = new URL(request.url).searchParams.get("id")
     await connectMongoDB();
     await Blog.findByIdAndDelete(id);
