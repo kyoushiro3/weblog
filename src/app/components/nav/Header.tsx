@@ -1,26 +1,18 @@
-"use client";
-
-import { signIn, useSession, signOut } from "next-auth/react";
+import Link from "next/link";
+import logo from "../public/blog-light.png"
+import Image from "next/image";
 
 const Header = () => {
-  const { data: session, status } = useSession();
-
-  if (status === "authenticated") {
-    return (
-      <div>
-        <p>Signed in as {session.user?.image}</p>
-        <button onClick={() => signOut()}>Sign out</button>
-      </div>
-    );
-  }
-// "google", { prompt: "select_account" }
   return (
-    <div>
-      <p>Not signed in</p>
-      <button onClick={async() => signIn()}> 
-        Sign in
-      </button>
-    </div>
+    <header className="w-full p-2 border-b border-border">
+      <nav className="flex justify-around items-center">
+        <h1 className="font-bold tracking-wide">
+        <Link className="flex gap-2 items-center justify-center" href={"/"}>
+          <Image src="/public/blob-light.png" width={20} height={20} alt="logo"/> WeBlog
+        </Link>
+        </h1>
+      </nav>
+    </header>
   );
 };
 
