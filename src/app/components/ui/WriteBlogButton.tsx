@@ -11,14 +11,15 @@ const WriteBlogButton = () =>{
 
     return(
         <div>
-             <Link href="/addBlog"/>
+             <Link href="/addBlog">
               <Button
-                variant= "outline"
+                variant= "default"
                 disabled={status === "authenticated" ? false : true}
                 className="border-2 border-border"
               >
-                Create a post  <FiEdit3 className="ml-2" />
+                Write  <FiEdit3 className="ml-2" />
               </Button>
+              </Link>
         </div>
     )
 }
