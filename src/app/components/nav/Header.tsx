@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import WriteBlogButton from "../ui/WriteBlogButton";
 import ThemeSwitcher from "../ThemeSwitcher";
 import { useTheme } from "next-themes";
+import LoginDropDown from "./Login-dropdown";
 
 export default function Header() {
   const { data: session, status } = useSession();
@@ -82,16 +83,20 @@ export default function Header() {
           </h1>
         </div>
         <div className="flex items-center gap-4 sm:gap-5">
-          <WriteBlogButton />
+        {status === "authenticated"
+              ?  <WriteBlogButton />
+              : ""}
           <ThemeSwitcher />
-          <button
+          <LoginDropDown/>
+
+          {/* <button
             className="border-raduis rounded-full bg-black text-white text-sm px-5 py-2 dark:bg-white dark:text-black"
             onClick={handleButtonClick}
           >
             {status === "authenticated"
               ? `Hello, ${session?.user?.name}!`
               : "Get started"}
-          </button>
+          </button> */}
         </div>
       </nav>
     </header>
