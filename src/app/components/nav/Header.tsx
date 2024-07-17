@@ -9,15 +9,6 @@ import LoginDropDown from "./Login-dropdown";
 
 export default function Header() {
   const { data: session, status } = useSession();
-  const router = useRouter();
-
-  const handleButtonClick = () => {
-    if (status === "authenticated") {
-      router.push("/");
-    } else {
-      signIn();
-    }
-  };
 
   const { theme } = useTheme();
 
@@ -88,15 +79,7 @@ export default function Header() {
               : ""}
           <ThemeSwitcher />
           <LoginDropDown/>
-
-          {/* <button
-            className="border-raduis rounded-full bg-black text-white text-sm px-5 py-2 dark:bg-white dark:text-black"
-            onClick={handleButtonClick}
-          >
-            {status === "authenticated"
-              ? `Hello, ${session?.user?.name}!`
-              : "Get started"}
-          </button> */}
+          
         </div>
       </nav>
     </header>

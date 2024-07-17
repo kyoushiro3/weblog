@@ -4,9 +4,13 @@ import Blog from "../../../../../models/blog";
 
 export async function PUT(request: any,  { params }: { params: { id: string } }){
     const {id} = params;
-    const {title, description} = await request.json()
+    const {newTitle: title,
+        newDescription: description,
+        newCatogory: catogory,
+        date,
+        time,} = await request.json()
     await connectMongoDB()
-    await Blog.findByIdAndUpdate(id, {title, description})
+    await Blog.findByIdAndUpdate(id, { title, description, catogory, date, time })
     return NextResponse.json({message: "Blog updated"}, {status:200})
 }
 
