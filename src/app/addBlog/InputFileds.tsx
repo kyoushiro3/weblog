@@ -104,6 +104,7 @@ const InputFields = () => {
       <form onSubmit={handleSubmit} className="flex flex-col gap-3">
         <div>
           <Input
+          className="border-none text-2xl font-semibold focus-visible:ring-0"
             type="text"
             id="title"
             placeholder="Title"
@@ -114,11 +115,13 @@ const InputFields = () => {
         </div>
 
         <div>
-          <Textarea
+          <Textarea 
+            className="border-none focus-visible:ring-0 text-md"
             id="description"
             placeholder="Tell your story..."
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            autoFocus={true}
           />
           {error && (
             <p className="text-red-400 text-xs m-1">
@@ -128,7 +131,7 @@ const InputFields = () => {
         </div>
 
         <div>
-          <Label>Category</Label>
+          <Label className="font-bold">Category</Label>
           <Select
             isMulti
             options={options}

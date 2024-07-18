@@ -5,8 +5,8 @@ import { Metadata } from "next";
 import InputFields from "./InputFileds";
 
 export const metadata: Metadata = {
-  title: "write | Add Blog",
-  description: "Add a new blog to the website",
+  title: "write | new story",
+  description: "add a new blog to the website",
 }
 
 export default function AddBlog() {
