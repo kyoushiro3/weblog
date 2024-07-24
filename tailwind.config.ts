@@ -16,7 +16,7 @@ const config: Config = {
       },
       fontFamily:{
         lora: ['var(--font-lora)'],
-        raleway: ['var(--font-raleway)'],
+        rubik: ['var(--font-rubik)'],
         charter: ['Charter', 'sans-serif']
       },
       colors: {

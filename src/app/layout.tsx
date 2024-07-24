@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Lora, Raleway } from "next/font/google";
+import { Inter, Lora, Rubik } from "next/font/google";
 import "./globals.css";
 import AuthProvider from "../../context/AuthProvider";
 import Header from "./components/nav/Header";
@@ -12,10 +12,10 @@ const lora = Lora({
   variable: '--font-lora',
 })
 
-const raleway = Raleway({
+const rubik = Rubik({
   subsets: ['latin'],
   display: 'swap',
-  variable: '--font-raleway',
+  variable: '--font-rubik',
 })
 
 export const metadata: Metadata = {
@@ -38,7 +38,7 @@ export default function RootLayout({
       <head>
       <link rel="icon" href="/images/logo.ico" />
       </head>
-      <body className={`${raleway.className} ${lora.variable}`}>
+      <body className={`${rubik.className} ${lora.variable}`}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <AuthProvider>
         <div>

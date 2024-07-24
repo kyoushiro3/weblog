@@ -12,3 +12,14 @@ export interface weblogData{
     updatedAt?: string;
     __v?: number;
 }
+
+export interface SearchProps {
+    search: string
+    setSearch: (search: string) => void
+  }
+  
+  export interface SettingsProps {
+    isLoading: boolean
+    setIsLoading: (settings: boolean) => void
+  }
+  

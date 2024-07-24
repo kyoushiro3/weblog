@@ -1,7 +1,6 @@
 import Link from "next/link";
 import RemoveBtn from "./RemoveBtn";
 import { HiPencilAlt } from "react-icons/hi";
-import Header from "./nav/Header";
 
 const getBlogs = async() =>{
   try{
