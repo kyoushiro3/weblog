@@ -82,7 +82,7 @@ const EditBlog = ({
 
     try {
       const res = await fetch(
-        `https://blog-shrix1.vercel.app/api/blog/${id}/`,
+        `http://localhost:3000/api/blogs/${id}/`,
         {
           method: "PUT",
           headers: {
