@@ -1,14 +1,23 @@
+"use client"
+
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 import { cn } from "../../../../libs/utils"
 import React from "react"
 import { buttonVariants } from "./button"
 
-const AlertDialog =AlertDialogPrimitive.Root
+const AlertDialog = AlertDialogPrimitive.Root
+
 const AlertDialogTrigger = AlertDialogPrimitive.Trigger
 
-const AlertDialogPortal = ({className,...props}: AlertDialogPrimitive.AlertDialogPortalProps) => (
-  <AlertDialogPrimitive.Portal className={cn(className)} {...props} />
-)
+const AlertDialogPortal = ({
+  className,
+  ...props
+}: AlertDialogPrimitive.AlertDialogPortalProps & { className?: string }) => (
+  <div className={cn(className)}>
+    <AlertDialogPrimitive.Portal {...props} />
+  </div>
+);
+
 AlertDialogPortal.displayName = AlertDialogPrimitive.Portal.displayName
 
 const AlertDialogOverlay =React.forwardRef<React.ElementRef<typeof AlertDialogPrimitive.Overlay>, React.ComponentPropsWithoutRef<typeof AlertDialogPrimitive.Overlay>>(({className, ...props}, ref) =>(
