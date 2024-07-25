@@ -1,10 +1,11 @@
 import Link from "next/link";
 import "./globals.css";
+import Footer from "./components/nav/Footer";
 
 export default function Home() {
   return (
     <main className="px-4 sm:px-6">
-      <section className="mx-auto max-w-7xl py-16 px-2 lg:py-24">
+      <section className="mx-auto max-w-7xl py-16 px-2 lg:py-20">
         <div className="w-full flex flex-col gap-4">
           <h1 className="text-4xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-bold font-rubik tracking-wide mb-5 sm:mb-4">
             Human
@@ -21,6 +22,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <Footer/>
     </main>
   );
 }
