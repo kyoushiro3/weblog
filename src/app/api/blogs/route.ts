@@ -28,7 +28,7 @@ export async function GET() {
       { message: "Blogs fetched successfully", blogs },
       { status: 200 }
     );
-  } catch (error) {
+  } catch (error:any) {
     console.error("Error fetching blogs:", error);
     return NextResponse.json(
       { message: "Failed to fetch blogs", error: error.message },
