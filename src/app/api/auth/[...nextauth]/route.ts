@@ -21,6 +21,7 @@ const options: NextAuthOptions ={
           clientSecret: process.env.GITHUB_SECRET as string,
         }),
     ],
+    
     // callbacks: {
     //     async jwt({ token, account }) {
     //       if (account) {

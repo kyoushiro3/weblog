@@ -41,7 +41,7 @@ export default function RootLayout({
       <body className={`${rubik.className} ${lora.variable}`}>
       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
       <AuthProvider>
-        <div>
+        <div className="sticky top-0 z-50">
           <Header/>
         </div>
         <div className="mt-8">

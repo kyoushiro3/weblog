@@ -7,6 +7,10 @@ import { Badge } from "../ui/badge";
 import { usePathname, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 
+interface BlogDetailProps {
+  blog: weblogData;
+}
+
 const BlogCard = ({
   data,
   username,
@@ -21,10 +25,10 @@ const BlogCard = ({
 
   return (
     <section
-      className={` w-full lg:w-1/2 space-y-2 rounded-xl p-4 relative group hover:shadow-xl 
+      className={`w-full space-y-2 rounded-xl p-4 relative group hover:shadow-xl 
         transition-all duration-300 hover:bg-gray-300/10 dark:hover:bg-white/5 border-2 
         border-transparent hover:border-gray-300/40 dark:hover:border-white/5 
-        ${path.startsWith("/blog") ? "cursor-default" : "cursor-pointer"}`}
+        ${path.startsWith("/blogs") ? "cursor-default" : "cursor-pointer"}`}
       onClick={() =>
         path.startsWith("/api/blogs")
           ? null

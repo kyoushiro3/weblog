@@ -1,48 +1,37 @@
 "use client";
-import { useState, useEffect } from "react";
-import { create } from "zustand";
+import { useState} from "react";
 import { weblogData } from "@/app/types/props";
-import { SearchProps, SettingsProps } from "@/app/types/props";
 import BlogCard from "./BlogCard";
+import { useSearchStore } from "@/app/store/mainStore";
 
-
-// Search store
-const useSearchStore = create<SearchProps>((set) => ({
-  search: "",
-  setSearch: (search: string) => set({ search }),
-}));
-
-// Settings store
-const useSettings = create<SettingsProps>((set) => ({
-  isLoading: false,
-  setIsLoading: (isLoading: boolean) => set({ isLoading }),
-}));
 
 const AllBlogCards = ({ blogs }: { blogs: weblogData[] }) => {
-  const [data, setData] = useState<weblogData[]>(blogs);
-  const search = useSearchStore((state) => state.search);
+  const search = useSearchStore((state) => state.search)
+  const [data, setData] = useState(blogs)
 
-  useEffect(() => {
-    if (search === "") {
-      setData(blogs);
-    } else {
-      setData(
-        blogs.filter((item) =>
-          item.title.toLowerCase().includes(search.toLowerCase())
-        )
-      );
-    }
-  }, [search, blogs]);
 
   return (
-    <div>
-      {data.map((item) => (
-        <div key={item._id} className="grid place-items-center flex-col w-full gap-3">
-          <BlogCard data={item} />
-        </div>
-      ))}
-    </div>
-  );
-};
+    <>
+      {data
+        .filter((item: any) => {
+          if (search === "") {
+            return item
+          } else if (item.title.toLowerCase().includes(search.toLowerCase())) {
+            return item
+          }
+        })
+        .map((item: weblogData, index: React.Key | null | undefined) => {
+          return (
+            <div
+              key={index}
+              className="grid place-items-center flex-col w-full gap-3 mt-2"
+            >
+              <BlogCard data={item} />
+            </div>
+          )
+        })}
+    </>
+  )
+}
 
 export default AllBlogCards;

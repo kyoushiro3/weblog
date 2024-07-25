@@ -1,5 +1,6 @@
 import { getBlogs } from "../api/blogs/getBlog"
 import AllBlogCards from "../components/filter/AllBlogCards"
+import Filter from "../components/filter/Filter"
 import { weblogData } from "../types/props"
 
 
@@ -10,7 +11,7 @@ const Page = async () =>{
     <main className="max-w-2xl mx-auto p-4">
 
     <hr className="w-full lg:w-1/2" />
-
+    <Filter/>
     <AllBlogCards blogs={blogs} />
   </main>
   )
