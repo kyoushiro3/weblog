@@ -81,3 +81,22 @@
       --ring: 0 0% 14.9%;
     }
   }
+  html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  #__next {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  main {
+    flex-grow: 1;
+  }
+  
+  footer {
+    margin-top: auto;
+  }
+  

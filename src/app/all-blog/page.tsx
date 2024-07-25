@@ -5,7 +5,7 @@ import { weblogData } from "../types/props"
 
 
 const Page = async () =>{
-  const {blogs } : {blogs:weblogData[]} = await getBlogs()
+  const { blogs } : {blogs:weblogData[]} = await getBlogs()
 
   return(
     <main className="max-w-2xl mx-auto p-4">
