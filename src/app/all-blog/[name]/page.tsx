@@ -12,8 +12,8 @@ export async function generateMetadata({
   const { name } = params
 
   return {
-    title: `Blog it! | ${name.replaceAll("-", " ")}`,
-    description: `Blog title is ${name}`,
+    title: `weblog | ${name.replaceAll("-", " ")}`,
+    description: `weblog ${name}`,
   }
 }
 

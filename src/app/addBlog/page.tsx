@@ -1,6 +1,3 @@
-import { useState } from "react";
-import { Input } from "../components/ui/input";
-import { useRouter } from "next/navigation";
 import { Metadata } from "next";
 import InputFields from "./InputFileds";
 

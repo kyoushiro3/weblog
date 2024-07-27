@@ -16,6 +16,6 @@ const blogSchema = new Schema(
   }
 )
 
-const Blog = mongoose.models.weblogdb || mongoose.model("weblogdb", blogSchema);
+const Blog = mongoose.models.weblogdb1 || mongoose.model("weblogdb1", blogSchema);
 
 export default Blog;

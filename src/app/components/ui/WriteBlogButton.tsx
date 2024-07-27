@@ -15,7 +15,7 @@ const WriteBlogButton = () =>{
               <Button
                 variant= "default"
                 disabled={status === "authenticated" ? false : true}
-                className="border-radius bg-black hover:bg-black rounded-full text-white text-sm px-5 py-2 dark:text-black dark:bg-white hidden sm:flex items-center"
+                className="border-radius bg-black hover:bg-gray-800 rounded-full text-white text-sm px-5 py-2 dark:text-black dark:bg-white hidden sm:flex items-center"
               >
                 Write  <FiEdit3 className="ml-2 hidden sm:block" />
               </Button>

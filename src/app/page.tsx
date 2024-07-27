@@ -17,7 +17,7 @@ export default function Home() {
               a place to read, write, and deepen your understanding.
             </p>
             <div className="flex gap-3 mt-4">
-              <button className="font-rubik border-radius bg-black hover:bg-black rounded-full text-white text-sm px-5 py-2 dark:text-black dark:bg-white sm:flex items-center">
+              <button className="font-rubik border-radius bg-black hover:bg-gray-800 rounded-full text-white text-sm px-5 py-2 dark:text-black dark:bg-white sm:flex items-center">
                 <Link href="/all-blog" className="font-rubik">Start reading</Link>
               </button>
             </div>

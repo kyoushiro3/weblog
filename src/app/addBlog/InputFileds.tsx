@@ -10,7 +10,7 @@ import Select from "react-select";
 import { Button } from "../components/ui/button";
 import { BiLoaderCircle } from "react-icons/bi";
 
-// Define the interface for the blog data
+
 export interface DBBlogData {
   _id?: string;
   title: string;
@@ -75,9 +75,9 @@ const InputFields = () => {
             title,
             description,
             category: correctCategory,
-            user: session?.user?.name || "Anonymous",
-            email: session?.user?.email || "No email provided",
-            img: session?.user?.image || "No image provided",
+            user: session?.user?.name,
+            email: session?.user?.email,
+            img: session?.user?.image,
             date: new Date().toLocaleDateString(),
             time: `${new Date().getHours()}:${new Date().getMinutes()}`,
           }),
@@ -88,7 +88,7 @@ const InputFields = () => {
           setDescription("");
           setCategory([]);
           setIsLoading(false);
-          router.push("/");
+          router.push("/all-blog");
         } else {
           throw new Error("Failed to create blog.");
         }

@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
-import { signIn, signOut, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 import WriteBlogButton from "../ui/WriteBlogButton";
 import ThemeSwitcher from "../ThemeSwitcher";
 import { useTheme } from "next-themes";
@@ -15,8 +14,8 @@ export default function Header() {
   return (
     <header className="relative px-4 sm:px-6">
       <nav className="mx-auto flex max-w-7xl items-center justify-between py-4 px-2">
+      <Link className="flex items-center justify-center" href={"/"}>
         <div className="flex items-center gap-4 sm:gap-5">
-          <Link className="flex items-center justify-center" href={"/"}>
             {theme === "dark" ? (
               <svg
                 version="1.1"
@@ -68,11 +67,11 @@ export default function Header() {
                 />
               </svg>
             )}
-          </Link>
           <h1 className="font-lora font-bold text-3xl hidden sm:block">
             write
           </h1>
         </div>
+        </Link>
         <div className="flex items-center gap-4 sm:gap-5">
         {status === "authenticated"
               ?  <WriteBlogButton />
