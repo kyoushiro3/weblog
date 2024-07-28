@@ -1,11 +1,13 @@
 import { Badge } from "@/app/components/ui/badge"
 import { weblogData } from "@/app/types/props"
 import { Image } from "@nextui-org/react"
+import Link from "next/link"
 import React from "react"
+import { HiPencilAlt } from "react-icons/hi"
 import { IoMdImage } from "react-icons/io"
 
 const BlogOverview = ({ data }: { data: weblogData[] }) => {
-  const { time, date, title, description, category } = data[0] || data
+  const { time, date, title, description, category, _id } = data[0] || data
 
   return (
     <section className="w-full lg:w-1/2 flex flex-col gap-3">
@@ -36,6 +38,12 @@ const BlogOverview = ({ data }: { data: weblogData[] }) => {
       </div>
 
       <p className="opacity-80">{description}</p>
+      <div className="flex gap-2 mt-2">
+            {/* <RemoveBtn id={data._id}/> */}
+            <Link href={`/editBlog/${_id}`}>
+              <HiPencilAlt size={24} />
+            </Link>
+          </div>
     </section>
   )
 }

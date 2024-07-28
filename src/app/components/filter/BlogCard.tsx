@@ -1,11 +1,13 @@
 "use client";
 
 import { weblogData } from "@/app/types/props";
-import { HiOutlineArrowRight } from "react-icons/hi";
+import { HiOutlineArrowRight, HiPencilAlt } from "react-icons/hi";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import { usePathname, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+import RemoveBtn from "../RemoveBtn";
+import Link from "next/link";
 
 interface BlogDetailProps {
   blog: weblogData;
@@ -59,6 +61,7 @@ const BlogCard = ({
 
       {path.startsWith("/blog") ? (
         <div className="absolute right-3 bottom-3 opacity-0 group-hover:opacity-100">
+          
           <Button
             className="px-2 py-1 h-7"
             onClick={() =>

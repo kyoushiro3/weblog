@@ -9,9 +9,9 @@ const ProfileHeader = ({ data }: {data: weblogData[]| any}) => {
   const { user, email, img } = data[0] || data;
 
   return (
-    <section className="w-full lg:w-1/2 flex justify-center flex-row gap-3 items-start">
+    <section className="w-full lg:w-1/2 flex justify-center flex-row gap-3 items-start mt-4">
       <Avatar className="w-24 h-24">
-        <AvatarImage src={img} alt="user profile" />
+        <AvatarImage src={img || ""} alt="user profile" />
         <AvatarFallback>
           {user && user.slice(0, 2).toUpperCase()}
         </AvatarFallback>
