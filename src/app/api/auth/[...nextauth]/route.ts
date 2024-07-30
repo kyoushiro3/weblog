@@ -2,20 +2,13 @@ import NextAuth from "next-auth"
 import type { NextAuthOptions } from "next-auth"
 import GitHubProvider from "next-auth/providers/github"
 import GoogleProvider from "next-auth/providers/google"
-import { JWT } from "next-auth/jwt";
-import { DefaultSession } from 'next-auth';
 
 const options: NextAuthOptions ={
     providers: [
-        GoogleProvider({
-            clientId: process.env.GOOGLE_ID as string,
-            clientSecret: process.env.GOOGLE_SECRET as string,
-            authorization: {
-              params: {
-                prompt: "select_account",
-              },
-            },
-        }),
+      GoogleProvider({
+        clientId: process.env.GOOGLE_ID as string,
+        clientSecret: process.env.GOOGLE_SECRET as string,
+      }),
         GitHubProvider({
           clientId: process.env.GITHUB_ID as string,
           clientSecret: process.env.GITHUB_SECRET as string,
@@ -35,7 +28,12 @@ const options: NextAuthOptions ={
     //     },
     //   },
 
-    secret: process.env.NEXTAUTH_SECRET,
+    // secret: process.env.NEXTAUTH_SECRET,
+    // pages: {
+    //   signIn: '/auth/signin',
+    //   error: '/auth/error'
+    // },
+    // debug: true,
 
 }
 
