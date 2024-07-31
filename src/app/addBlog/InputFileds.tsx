@@ -66,7 +66,7 @@ const InputFields = () => {
       setError(false);
 
       try {
-        const res = await fetch("http://localhost:3000/api/blogs", {
+        const res = await fetch("https://weblog-kimdarren.vercel.app/api/blogs", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

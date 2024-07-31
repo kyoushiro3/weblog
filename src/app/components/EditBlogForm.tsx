@@ -49,7 +49,7 @@ const EditBlogForm = ({
     }
 
     try {
-      const res = await fetch(`http://localhost:3000/api/blogs/${id}/`, {
+      const res = await fetch(`https://weblog-kimdarren.vercel.app/api/blogs/${id}/`, {
         method: "PUT",
         headers: {
           "Content-type": "application/json",

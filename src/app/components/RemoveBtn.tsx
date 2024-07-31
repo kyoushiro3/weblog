@@ -14,7 +14,7 @@ export default function RemoveBtn({ id }: RemoveBtnProps) {
     const confirmed = confirm("Are you sure?");
 
     if (confirmed) {
-      const res = await fetch(`http://localhost:3000/api/blogs?id=${id}`, {
+      const res = await fetch(`https://weblog-kimdarren.vercel.app/api/blogs?id=${id}`, {
         method: "DELETE",
       });
       if (res.ok) {

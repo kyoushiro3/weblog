@@ -4,7 +4,7 @@ import { HiPencilAlt } from "react-icons/hi";
 
 const getBlogs = async() =>{
   try{
-    const res = await fetch("http://localhost:3000/api/blogs", {
+    const res = await fetch("https://weblog-kimdarren.vercel.app/api/blogs", {
       cache: "no-store"
     })
     if(!res.ok){

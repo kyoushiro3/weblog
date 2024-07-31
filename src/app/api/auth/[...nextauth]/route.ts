@@ -15,20 +15,16 @@ const options: NextAuthOptions ={
         }),
     ],
     
-    // callbacks: {
-    //     async jwt({ token, account }) {
-    //       if (account) {
-    //         token.accessToken = account.access_token;
-    //       }
-    //       return token;
-    //     },
-    //     async session({ session, token }) {
-    //       session.accessToken = token.accessToken;
-    //       return session;
-    //     },
-    //   },
+    callbacks: {
+        async jwt({ token, account }) {
+          if (account) {
+            token.accessToken = account.access_token;
+          }
+          return token;
+        },
+      },
 
-    // secret: process.env.NEXTAUTH_SECRET,
+    secret: 'IamVeryHandsome'
     // pages: {
     //   signIn: '/auth/signin',
     //   error: '/auth/error'
